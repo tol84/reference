@@ -18,7 +18,23 @@
 
 ---
 
-### 2. GreenSock Library
+### 2-1. VelocityJS Library
+
+<img src="../ASSETS/velocityjs-logo.png" alt="" align="right" width="162" height="154">
+
+ jQuery의 느린 애니메이션을 보완할 라이브러리.
+
+VelocityJS는 jQuery `.animate()`와 동일한 API를 제공하는 애니메이션 엔진으로 jQuery 없이도 작동합니다. `.animate()`와 달리, 매우 빠르고 컬러(Color), 트랜스폼(Transform), 반복(Loop), 이징(easings), 스크롤(Scroll), SVG 애니메이션 등 다양한 기능을 지원합니다.
+
+__WhatsApp, Tumblr, Windows, Samsung, Uber 등 수천 개의 회사가 VelocityJS를 사용하고 있습니다. [Libscore.com](http://libscore.com/)을 방문하면 어떤 사이트가 VelocityJS를 웹서비스에 사용하는지 확인할 수 있습니다.__
+
+- [velocityjs.org](http://velocityjs.org/)
+- [velocityjs GitHub](https://github.com/julianshapiro/velocity)
+- [VelocityJS 사용법](./VelocityJS/VelocityJS.md)
+
+---
+
+### 2-2. GreenSock Library
 
 <img src="../ASSETS/greensock.png" alt="" align="right">
 

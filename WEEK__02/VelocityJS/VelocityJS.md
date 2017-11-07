@@ -456,7 +456,7 @@ $.Velocity.RunSequence(offcanvas_sequence);
 
 ### 기본: 전달인자
 
-<a href="http://codepen.io/julianshapiro/pen/BjwtC" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/BjwtC" title="새 탭(창) 열림">DEMO</a>
 
 VelocityJS는 첫번째 전달인자로 CSS 속성 및 값(Object)을 전달합니다. 옵션 객체는 두번째 인자로 전달할 수 있습니다.
 
@@ -489,7 +489,7 @@ $.Velocity.defaults = {
   // 이징
   easing: 'swing',
   // 대기열(큐)
-  queue: ',
+  queue: '',
   // 시작할 때, 실행(1회)되는 콜백 함수
   begin: undefined,
   // 진행 중일 때, 실행되는 콜백 함수
@@ -555,7 +555,7 @@ $('.element').velocity({left: '20px'}, 420, function(){ ... });
 
 ### 기본: 속성맵
 
-<a href="http://codepen.io/julianshapiro/pen/fjbct" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/fjbct" title="새 탭(창) 열림">DEMO</a>
 
 VelocityJS는 속성마다 하나의 숫자 값을 애니메이션으로 설정합니다.
 
@@ -599,7 +599,7 @@ $('.element').velocity({
 
 ### 기본: 체이닝
 
-<a href="http://codepen.io/julianshapiro/pen/hyqlF" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/hyqlF" title="새 탭(창) 열림">DEMO</a>
 
 `.velocity()` 호출이 연속해서 쌓이면 자동으로 대기열(큐, `queue`)에 대기됩니다. 이전 애니메이션이 완료되면 다음 애니메이션이 실행됩니다.
 
@@ -641,10 +641,10 @@ $('.element').velocity({ opacity: 1 }, { duration: 'slow' });
 
 VelocityJS는 다양한 이징 설정을 제공합니다. (IE 8+)
 
-- jQuery UI 이징  | <a href="https://codepen.io/julianshapiro/pen/bAiIt" target="_blank" title="새 탭(창) 열림">DEMO</a>
-- CSS 베지어 커브  | <a href="https://codepen.io/julianshapiro/pen/xBJcu" target="_blank" title="새 탭(창) 열림">DEMO</a>
-- 스프링 물리학    | <a href="https://codepen.io/julianshapiro/pen/fgjaF" target="_blank" title="새 탭(창) 열림">DEMO</a>
-- 스텝 이징       | <a href="https://codepen.io/julianshapiro/pen/ylvuh" target="_blank" title="새 탭(창) 열림">DEMO</a>
+- jQuery UI 이징  | <a href="https://codepen.io/julianshapiro/pen/bAiIt" title="새 탭(창) 열림">DEMO</a>
+- CSS 베지어 커브  | <a href="https://codepen.io/julianshapiro/pen/xBJcu" title="새 탭(창) 열림">DEMO</a>
+- 스프링 물리학    | <a href="https://codepen.io/julianshapiro/pen/fgjaF" title="새 탭(창) 열림">DEMO</a>
+- 스텝 이징       | <a href="https://codepen.io/julianshapiro/pen/ylvuh" title="새 탭(창) 열림">DEMO</a>
 
 ```js
 /* jQuery UI 이징 */
@@ -740,7 +740,7 @@ $.Velocity.Easings.myCustomEasing = function (p, opts, tweenDelta) {
 
 대기열(queue)을 `false`로 설정하면 진행 중인 애니메이션과 병렬로 애니메이션을 실행시킬 수 있습니다.
 
-<a href="https://codepen.io/julianshapiro/pen/Ioeqy" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="https://codepen.io/julianshapiro/pen/Ioeqy" title="새 탭(창) 열림">DEMO</a>
 
 ```js
 var $el = $('.element');
@@ -756,7 +756,7 @@ window.setTimeout(function() {
 
 `dequeue()`를 사용하여 대기열에 등록된 애니메이션을 추후 실행시킬 수도 있습니다.
 
-<a href="https://codepen.io/julianshapiro/pen/bIBGa" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="https://codepen.io/julianshapiro/pen/bIBGa" title="새 탭(창) 열림">DEMO</a>
 
 ```js
 var $el = $('.element');
@@ -786,7 +786,7 @@ window.setTimeout(function() {
 
 #### 시작(Begin)
 
-<a href="http://codepen.io/julianshapiro/pen/zCJgp" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/zCJgp" title="새 탭(창) 열림">DEMO</a>
 
 애니메이션 시작 지점에서 1회 콜백함수가 실행합니다. (`loop` 설정이 있더라도 1회만 실행)
 
@@ -801,7 +801,7 @@ $('.element').velocity({
 
 #### 종료(Complete)
 
-<a href="http://codepen.io/julianshapiro/pen/DCLja" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/DCLja" title="새 탭(창) 열림">DEMO</a>
 
 애니메이션 종료 지점에서 1회 콜백함수가 실행합니다. (`loop` 설정이 있더라도 1회만 실행)
 
@@ -816,7 +816,7 @@ $('.element').velocity({
 
 #### 진행(Progress)
 
-<a href="http://codepen.io/julianshapiro/pen/Jktjq" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/Jktjq" title="새 탭(창) 열림">DEMO</a>
 
 애니메이션 진행 중에 반복적으로 콜백함수가 실행합니다.
 
@@ -860,7 +860,7 @@ $('.element').velocity({
 
 ### 옵션: 루프(Loop)
 
-<a href="http://codepen.io/julianshapiro/pen/KgvyC" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/KgvyC" title="새 탭(창) 열림">DEMO</a>
 
 반복 횟수(정수)를 설정하거나, 무한 반복 시킬 수 있습니다.
 
@@ -880,7 +880,7 @@ $('.element').velocity({ height: '10em' }, { loop: true }); // 무한 반복 애
 
 ### 옵션: 지연시간(delay)
 
-<a href="http://codepen.io/julianshapiro/pen/GICev" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/GICev" title="새 탭(창) 열림">DEMO</a>
 
 애니메이션 시작 전에 일시정지를 설정하려면 `delay` 옵션을 밀리초(ms) 단위로 설정합니다.
 
@@ -898,7 +898,7 @@ $('.element').velocity({
 
 ### 옵션: 디스플레이(display) & 비져빌리티(visibility) 설정
 
-<a href="http://codepen.io/julianshapiro/pen/kJlKB" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/kJlKB" title="새 탭(창) 열림">DEMO</a>
 
 VelocityJS의 `display` 및 `visibility` 옵션은 애니메이션 종료 후, CSS 속성으로 설정됩니다.
 
@@ -1003,7 +1003,7 @@ $('.element')
 
 ### 명령: 스크롤(scroll)
 
-<a href="http://codepen.io/julianshapiro/pen/kBuEi" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/kBuEi" title="새 탭(창) 열림">DEMO</a>
 
 스크롤(scroll) 사용법
 
@@ -1065,7 +1065,7 @@ $('html').velocity('scroll', { offset: 550, mobileHA: false });
 
 ### 명령: 스톱(stop)
 
-<a href="http://codepen.io/julianshapiro/pen/xLAfs" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/xLAfs" title="새 탭(창) 열림">DEMO</a>
 
 요소에 대해 현재의 모든 VelocityJS 호출(`queue`를 통해 호출된 병렬 애니메이션 포함)을 즉시 중지하려면 `.velocity()` 메서드의 1번째 인자로 `'stop'`을 전달합니다.
 
@@ -1114,7 +1114,7 @@ $el.velocity('stop', true);
 
 ### 명령: 피니쉬(finish)
 
-<a href="http://codepen.io/julianshapiro/pen/OPbQKw" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/OPbQKw" title="새 탭(창) 열림">DEMO</a>
 
 애니메이션의 끝으로 바로 이동하려면 `.velocity()` 메서드의 1번째 인자로 'finish'를 전달하여 종료 명령을 사용합니다.
 
@@ -1129,7 +1129,7 @@ $('.element').velocity('finish');
 
 ### 명령: 리버스(reverse)
 
-<a href="https://codepen.io/julianshapiro/pen/hBFbc" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="https://codepen.io/julianshapiro/pen/hBFbc" title="새 탭(창) 열림">DEMO</a>
 
 요소를 이전의 값으로 다시 복귀하는 애니메이션을 설정하려면 `.velocity()` 메서드의 1번째 인자로 `'reverse'`를 전달합니다.
 
@@ -1149,7 +1149,7 @@ $('.element').velocity('reverse', { duration: 2000 });
 
 ### 기능: 트랜스폼(Transforms)
 
-<a href="http://codepen.io/julianshapiro/pen/FIwfv" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/FIwfv" title="새 탭(창) 열림">DEMO</a>
 
 CSS 트랜스폼 속성을 사용하면 요소를 2D, 3D 변형(transform), 크기 조절(scale) 및 회전(rotate)시킬 수 있습니다. ([MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) 참고)
 VelocityJS는 CSS와 동일한 사용을 위해 `x`, `y` 속성 값이 아닌, CSS 속성 이름인 `translateX` 및 `translateY` 속성 이름을 사용합니다.
@@ -1315,7 +1315,7 @@ __브라우저 지원__
 
 ### 기능: 컬러(Colors)
 
-<a href="http://codepen.io/julianshapiro/pen/wlEtB" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/wlEtB" title="새 탭(창) 열림">DEMO</a>
 
 VelocityJS가 지원하는 컬러 속성은 다음과 같습니다.
 
@@ -1347,7 +1347,7 @@ $('.element').velocity({
 
 ### 기능: <abbr title="Scalable Vector Graphic">SVG</abbr>
 
-<a href="http://codepen.io/julianshapiro/pen/wmtEH" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/wmtEH" title="새 탭(창) 열림">DEMO</a>
 
 VelocityJS는 `x`, `rx`, `stroke-width`, `fill`, `stroke` 및 `stopColor` 등과 같은 SVG 관련 속성 애니메이션을 포함하여 SVG 요소 애니메이션을 완벽하게 지원합니다.
 
@@ -1415,7 +1415,7 @@ $('#rect')
 
 ### 기능: 후크(Hook)
 
-<a href="http://codepen.io/julianshapiro/pen/LFeDB" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/LFeDB" title="새 탭(창) 열림">DEMO</a>
 
 후크(Hook)는 CSS 멀티 속성의 서브 값입니다. 예를 들어, `textShadow` 속성은 `'0 0 10px #000'`의 멀티 값 형식을 사용합니다. 이를 VelocityJS에서 올바르게 사용하려면 `textShadowX`, `textShadowY` 및 `textShadowBlur`, `textShadowColor` 처럼 개별 속성을 사용하여야 합니다.
 
@@ -1464,7 +1464,7 @@ $.Velocity.hook($element, 'translateX');
 
 ### 기능: 프라미스(Promise)
 
-<a href="http://codepen.io/julianshapiro/pen/jIoca" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/jIoca" title="새 탭(창) 열림">DEMO</a>
 
 프라미스(Promise)에 대해 잘 모른다면 [자바스크립트 프라미스: 소개](https://developers.google.com/web/fundamentals/primers/promises)를 읽어보세요.
 
@@ -1500,7 +1500,7 @@ __ES6 Promise 폴리필 라이브러리__
 
 ### 기능: 목(Mock)
 
-<a href="http://codepen.io/julianshapiro/pen/KmlCv" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/KmlCv" title="새 탭(창) 열림">DEMO</a>
 
 UI 테스트를 수행 할 때, `$.Velocity.mock = true;` 설정하면 모든 VelocityJS 애니메이션을 `0ms` 지속시간(`duration`)과 `0ms` 지연시간(`delay`)으로 강제 실행합니다. (적용은 다음 애니메이션 틱(tick)부터)
 이와 같은 설정은 애니메이션 트위닝을 테스트하는 것보다 테스트 최종 값이 더 중요한 반복적인 UI 테스트를 수행 할 때 도움이 됩니다.
@@ -1518,7 +1518,7 @@ $.Velocity.mock = 10;
 
 ### 기능: 유틸리티 함수 (Utility Function)
 
-<a href="http://codepen.io/julianshapiro/pen/ythqp" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/ythqp" title="새 탭(창) 열림">DEMO</a>
 
 jQuery 객체를 생성해서 사용할 경우는 `.velocity()` 메서드를 사용하지만,
 jQuery 객체를 생성할 필요가 없는 경우는 `Velocity()` 유틸리티 함수를 사용하여 DOM 요소노드 또는 노드리스트를 대상으로 애니메이션을 설정할 수 있습니다.
@@ -1563,7 +1563,7 @@ $.Velocity.animate(div, 'reverse', 1000);
 
 ### 고급: 밸류 함수 (Value Function)
 
-<a href="http://codepen.io/julianshapiro/pen/Ecsoh" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/Ecsoh" title="새 탭(창) 열림">DEMO</a>
 
 속성 값으로 함수를 사용할 수 있습니다. 이 함수는 순환하는 요소마다 애니메이션이 시작되기 직전에 호출됩니다. 따라서 반복(loop)/반전(reverse) 할 때 함수는 반복적으로 다시 호출되지 않습니다.
 
@@ -1594,7 +1594,7 @@ $('.element').velocity({
 
 ### 고급: 포스피딩 (강제 적용, Forcefeeding)
 
-<a href="https://codepen.io/julianshapiro/pen/rkgyH" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="https://codepen.io/julianshapiro/pen/rkgyH" title="새 탭(창) 열림">DEMO</a>
 
 일반적으로 애니메이션 엔진은 DOM에 쿼리(query)하여 애니메이션되는 각 속성의 초기 값을 결정합니다.
 VelocityJS는 DOM 쿼리를 피할 수 있는 강제 전달(Forcefeeding, 사용자가 명시적으로 시작 값을 설정)이라는 기술을 사용하여
@@ -1659,7 +1659,7 @@ UI 팩의 완벽한 사용법은 VelocityJS 책 ["Web Animation using JavaScript
 
 #### 시퀀스 실행
 
-<a href="http://codepen.io/julianshapiro/pen/xnGDC" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/xnGDC" title="새 탭(창) 열림">DEMO</a>
 
 `RunSequence()` 함수는 복잡하게 중첩된 애니메이션 코드를 피할 수 있는 UI 팩 솔루션입니다.
 UI 팩을 사용하지 않을 경우 VelocityJS 애니메이션 코드는 아래처럼 중첩된 콜백함수를 사용해야 합니다.
@@ -1812,15 +1812,15 @@ UI 팩 이펙트에서만 작동하는 3가지 옵션을 살펴봅시다. (Veloc
 
 옵션 | 설명
 --- | ---
-stagger   | 요소들(집합)에 순차적인 스태거 애니메이션을 적용하려면 시간(ms)을 설정합니다.<br><a href="http://codepen.io/julianshapiro/pen/mqsnk" target="_blank" title="새 탭(창) 열림">DEMO</a>
-drag      | 요소들(집합)의 애니메이션 지속시간(duration)을 연속적으로 늘리려면 드래그 옵션을 `true`로 설정합니다. 마지막 요소는 시퀀스의 원래 값과 동일한 지속시간을 사용하여 애니메이션을 적용하지만, 마지막 요소 이전에는 지속시간 값이 점차 원래 값에 근접합니다. 최종 결과는 요소 간 이징 효과입니다.<br><a href="http://codepen.io/julianshapiro/pen/lxfie" target="_blank" title="새 탭(창) 열림">DEMO</a>
-backwords | 백워드 옵션을 `true`로 설정하면 세트의 마지막 요소부터 애니메이션이 적용됩니다. 뒤로 향하는 옵션은 시야에서 애니메이션되는 요소의 기본적인 동작(1번째 요소 → 마지막 요소)의 반대로 동작하기에, 시야에서 벗어나는 이펙트와 함께 사용할 때 이상적입니다.<br><a href="http://codepen.io/julianshapiro/pen/fEKsw" target="_blank" title="새 탭(창) 열림">DEMO</a>
+stagger   | 요소들(집합)에 순차적인 스태거 애니메이션을 적용하려면 시간(ms)을 설정합니다.<br><a href="http://codepen.io/julianshapiro/pen/mqsnk" title="새 탭(창) 열림">DEMO</a>
+drag      | 요소들(집합)의 애니메이션 지속시간(duration)을 연속적으로 늘리려면 드래그 옵션을 `true`로 설정합니다. 마지막 요소는 시퀀스의 원래 값과 동일한 지속시간을 사용하여 애니메이션을 적용하지만, 마지막 요소 이전에는 지속시간 값이 점차 원래 값에 근접합니다. 최종 결과는 요소 간 이징 효과입니다.<br><a href="http://codepen.io/julianshapiro/pen/lxfie" title="새 탭(창) 열림">DEMO</a>
+backwords | 백워드 옵션을 `true`로 설정하면 세트의 마지막 요소부터 애니메이션이 적용됩니다. 뒤로 향하는 옵션은 시야에서 애니메이션되는 요소의 기본적인 동작(1번째 요소 → 마지막 요소)의 반대로 동작하기에, 시야에서 벗어나는 이펙트와 함께 사용할 때 이상적입니다.<br><a href="http://codepen.io/julianshapiro/pen/fEKsw" title="새 탭(창) 열림">DEMO</a>
 
 이러한 옵션 사용에 대한 단계별 사용법은 [Faster UI Animations with VelocityJS](http://www.smashingmagazine.com/2014/06/18/faster-ui-animations-with-velocity-js/)를 참고하세요.
 
 ##### 이펙트: 등록(Registration)
 
-<a href="http://codepen.io/julianshapiro/pen/jaBgm" target="_blank" title="새 탭(창) 열림">DEMO</a>
+<a href="http://codepen.io/julianshapiro/pen/jaBgm" title="새 탭(창) 열림">DEMO</a>
 
 UI를 팩은 `stagger`, `drag`, `backwords` 옵션을 포함하는 커스텀 이펙트를 등록 할 수 있습니다. 등록된 커스텀 이펙트는 VelocityJS `$('.element').velocity('name')` 구문의 1번째 매개변수로 등록된 이름을 전달되어 실행됩니다.
 

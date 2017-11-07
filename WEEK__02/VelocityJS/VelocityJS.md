@@ -109,7 +109,7 @@ VelocityJS의 초고속 애니메이션 비밀은 DOM과 트윈스택(Tween Stac
 1. **빠릅니다**.<br>
   VelocityJS는 CSS만큼 빠른 속도를 자랑하며, 특히 모바일 장치에서 jQuery 보다 우수한 성능을 제공합니다.<br>
   브라우저 지원 면에서 제약이 있는 CSS 애니메이션과 달리 VelocityJS는 IE 8+ 지원합니다.
-1. **쉽습니다**<br>
+1. **쉽습니다**.<br>
   VelocityJS는 jQuery 애니메이션과 유사한 구문을 제공합니다.<br>
   jQuery를 사용하고 있다면 VelocityJS도 쉽게 사용할 수 있습니다.
 1. **RunSequence**<br>
@@ -1420,7 +1420,7 @@ $('#rect')
 후크(Hook)는 CSS 멀티 속성의 서브 값입니다. 예를 들어, `textShadow` 속성은 `'0 0 10px #000'`의 멀티 값 형식을 사용합니다. 이를 VelocityJS에서 올바르게 사용하려면 `textShadowX`, `textShadowY` 및 `textShadowBlur`, `textShadowColor` 처럼 개별 속성을 사용하여야 합니다.
 
 ```js
-$element.velocity({
+$('.element').velocity({
   textShadowX: 0,
   textShadowY: 0,
   textShadowBlur: 10,
@@ -1445,7 +1445,7 @@ $.Velocity.hook(elementNode, 'textShadowBlur', '10px');
 
 // jQuery 객체를 첫번째 인자로 전달
 // 반드시 단위를 제공해야 함.
-$.Velocity.hook($element, 'translateX', '500px');
+$.Velocity.hook($('.element'), 'translateX', '500px');
 ```
 
 `.hook()` 헬퍼함수를 사용해 훅을 GET
@@ -1455,7 +1455,7 @@ $.Velocity.hook($element, 'translateX', '500px');
 $.Velocity.hook(elementNode, 'textShadowBlur');
 
 // jQuery 객체를 첫번째 인자로 전달
-$.Velocity.hook($element, 'translateX');
+$.Velocity.hook($('.element'), 'translateX');
 ```
 
 > 훅 헬퍼 함수를 사용할 경우, CSS 속성 값으로 반드시 단위(px, deg 등)를 사용해야 합니다.
@@ -1475,9 +1475,9 @@ VelocityJS 콜(call)은 유틸리티 함수를 사용할 때 또는 프라미스
 /* VelocityJS 유틸리티 함수 Velocity() 사용 */
 $.Velocity.animate(element, { opacity: 0.5 })
   /* 위 애니메이션이 종료되면, 애니메이션 진행을 (리졸브(승인), resolve)합니다. */
-  .then(function(elements) { console.log("애니메이션 실행."); })
+  .then(function(elements) { console.log('애니메이션 실행.'); })
   /* 오류가 감지되면, 애니메이션 진행을 (리젝트(거절), reject)합니다. */
-  .catch(function(error) { console.log("애니메이션 실패."); });
+  .catch(function(error) { console.log('애니메이션 실패.'); });
 ```
 
 반환된 프라미스 객체는 이전에 설정된 애니메이션이 종료 될 때, 다음 애니메이션 진행을 리졸브(승인, resolve) 합니다.
@@ -1723,7 +1723,7 @@ UI 팩에는 몇 가지 미리 등록 된 이펙트가 포함되어 있어 사�
 사용법은 다음과 같습니다.
 
 ```js
-$elements.velocity('callout.bounce');
+$('.element').velocity('callout.bounce');
 ```
 
 > 인라인 요소는 CSS 트랜스폼 속성을 적용할 수 없어서, UI 팩은 모든 디스플레이(display) 속성 값을 자동으로 `inline`에서 `inline-block`으로 변경합니다.
@@ -1944,7 +1944,7 @@ $('.element').velocity('callout.pulse');
 ```
 
 ```js
-$element
+$('.element')
   .velocity('transition.flipXIn')
   .velocity('transition.flipXOut', { delay: 1000 });
 ```
@@ -1957,7 +1957,7 @@ $element
 
 ```js
 /* UI 팩의 자동 display 속성 설정을 무시하고 싶다면 null을 설정합니다. */
-$element.velocity("transition.flipXIn", { display: null });
+$('.element').velocity('transition.flipXIn', { display: null });
 ```
 
 커스텀 이펙트 등록(Custom UI Pack Effect Registration) 및 사용 방법을 다시 한 번 살펴봅시다.

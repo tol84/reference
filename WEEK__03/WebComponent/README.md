@@ -5,6 +5,32 @@
 웹 컴포넌트에 대한 필요성과 기술 표준에 대한 이야기는 몇 년에 걸쳐 거론되어 왔지만 Chrome, Opera를 제외한 주요 브라우저에서는 아직까지 일부만 지원하고 있는 실정입니다.
 하지만 [웹 컴포넌트 폴리필](https://www.webcomponents.org/polyfills)을 사용하면 바로 적용해 사용할 수 있습니다.
 
+## 목차
+
+- [소개](#소개)
+- [웹 컴포넌트를 구성하는 4가지 요소](#웹-컴포넌트를-구성하는-4가지-요소)
+- [커스텀 HTML 요소 만들기](#커스텀-html-요소-만들기)
+- [바인딩 할 데이터 API](#바인딩-할-데이터-api)
+- [HTML 템플릿 구성하기](#html-템플릿-구성하기)
+- [컴포넌트 스타일링](#컴포넌트-스타일링)
+- [라이프 사이클 메서드](#라이프-사이클-메서드)
+  - [connectedCallback](#connectedcallback)
+    - [Shadow DOM이란?](#shadow-dom이란)
+- [데이터 렌더링](#데이터-렌더링)
+    - [크로스 브라우징](#크로스-브라우징)
+- [테스트 서버](#테스트-서버)
+      - [테스트 서버 개발 모듈](#테스트-서버-개발-모듈)
+- [웹 컴포넌트 & Shadow DOM](#웹-컴포넌트--shadow-dom)
+- [웹 컴포넌트를 사용할 때 알아두어야 할 점<i>!</i>](#웹-컴포넌트를-사용할-때-알아두어야-할-점ii)
+  - [컴포넌트 이름 작성 규칙](#컴포넌트-이름-작성-규칙)
+  - [컴포넌트 확장](#컴포넌트-확장)
+  - [커스텀 요소는 컴포넌트 클래스 인스턴스](#커스텀-요소는-컴포넌트-클래스-인스턴스)
+  - [비공개(Private) 메서드](#비공개private-메서드)
+  - [컴포넌트 클래스 프리징(Freezing)](#컴포넌트-클래스-프리징freezing)
+- [결론](#결론)
+- [최신 정보](#최신-정보)
+- [참고](#참고)
+
 ## 소개
 
 웹 컴포넌트는 웹 애플리케이션 제작 시에 사용 가능한 부품(Component)을 말하며, 재사용을 목적으로 캡슐화 된 커스텀 HTML 요소를 만들 수 있는 웹 플랫폼 API 세트입니다.
@@ -15,6 +41,8 @@
 ```html
 <y9-card data-id="1"></y9-card>
 ```
+
+[⇪ 목차로 이동](#목차)
 
 <br>
 
@@ -35,6 +63,8 @@ HTML 템플릿(`<template>`)을 사용하면 새 템플릿을 만들 수 있지�
 1. __[Shadow DOM](https://dom.spec.whatwg.org/#shadow-trees)__<br>
 Shadow DOM은 컴포넌트 기반 애플리케이션을 작성하기 위한 도구로 설계 되었습니다.<br>
 컴포넌트 스코프(Scope)를 DOM에서 분리하고 CSS 등을 단순화 할 수 있습니다.
+
+[⇪ 목차로 이동](#목차)
 
 <br>
 
@@ -75,11 +105,15 @@ class Y9Card extends HTMLElement {
 window.customElements.define('y9-card', Y9Card);
 ```
 
+[⇪ 목차로 이동](#목차)
+
+<br>
+
 ## 바인딩 할 데이터 API
 
 [JSONPlaceholder](https://jsonplaceholder.typicode.com/) API를 사용해 등록된 커스텀 요소에 데이터를 바인딩 할 것입니다. 바인딩 될 데이터 구조는 다음과 같습니다.
 
-```json
+```js
 {
   id: 1,
   name: "Leanne Graham",
@@ -99,6 +133,8 @@ window.customElements.define('y9-card', Y9Card);
   website: "hildegard.org"
 }
 ```
+
+[⇪ 목차로 이동](#목차)
 
 <br>
 
@@ -136,6 +172,8 @@ API 데이터를 바인딩 할 템플릿을 만들어 봅시다. 템플릿으로
 ```html
 <script src="/components/Y9Card/customElement.js"></script>
 ```
+
+[⇪ 목차로 이동](#목차)
 
 <br>
 
@@ -189,6 +227,8 @@ API 데이터를 바인딩 할 템플릿을 만들어 봅시다. 템플릿으로
 
 </template>
 ```
+
+[⇪ 목차로 이동](#목차)
 
 <br>
 
@@ -268,7 +308,7 @@ connectedCallback() {
 템플릿, 스타일, 스크립트 코드를 캡슐화 하는 기능을 가지고 있어 HTML 문서의 DOM에서 분리할 수 있습니다.
 웹 컴포넌트에 연결하여 사용하는 방법이 아니더라도 Shadow DOM 만 따로 사용하는 것도 가능합니다.
 
-<img src="../ASSETS/shadowDOM.png" alt="Shadow DOM"><br>
+<img src="../../ASSETS/shadowDOM.png" alt="Shadow DOM"><br>
 > shadow host는 요소, Shadow DOM Subtrees는 Shadow DOM을 말합니다.
 
 Shadow DOM은 반드시 이미 존재하는 요소(HTML 파일 내에 사용된 요소)에 추가해야 합니다.
@@ -295,6 +335,8 @@ element.attachShadow({
   mode: 'open' // 'open' | 'close'
 });
 ```
+
+[⇪ 목차로 이동](#목차)
 
 <br>
 
@@ -441,6 +483,8 @@ toggle() {
 </body>
 ```
 
+[⇪ 목차로 이동](#목차)
+
 <br>
 
 ## 테스트 서버
@@ -495,13 +539,21 @@ $ npm i -D http-server
 $ npm run test-server
 ```
 
+[⇪ 목차로 이동](#목차)
+
 <br>
 
 ## 웹 컴포넌트 & Shadow DOM
 
 테스트 서버의 `index.html` 파일을 브라우저에서 테스트 하면 커스텀 요소가 올바르게 작동하는 것을 확인할 수 있습니다. (아래 그림 참고)
 
-<img src="../ASSETS/webComponent-shadowDOM.jpg" alt="">
+<img src="../../ASSETS/webComponent-shadowDOM.jpg" alt="">
+
+<br>
+<br>
+
+
+[⇪ 목차로 이동](#목차)
 
 ---
 
@@ -517,6 +569,8 @@ $ npm run test-server
 
 - 네이티브 HTML 요소는 텅빈 요소(empty element, e.g `<link />`)를 허용하지만,<br>
 커스텀 요소는 반드시 닫는 태그(e.g `</y9-card>`)가 필요합니다.
+
+[⇪ 목차로 이동](#목차)
 
 ### 컴포넌트 확장
 
@@ -541,6 +595,8 @@ class Y9FlipCard extend Y9Card {
 window.customElements.define('y9-flip-card', Y9FlipCard);
 ```
 
+[⇪ 목차로 이동](#목차)
+
 ### 커스텀 요소는 컴포넌트 클래스 인스턴스
 
 사용자가 HTML 문서에 추가하는 커스텀 HTML 요소는 컴포넌트 클래스의 인스턴스입니다.
@@ -558,6 +614,8 @@ var card_23 = document.querySelector('y9-card[data-id="23"]');
 // 카드 토글
 card_23.toggle();
 ```
+
+[⇪ 목차로 이동](#목차)
 
 ### 비공개(Private) 메서드
 
@@ -590,6 +648,8 @@ IIFE 패턴을 사용해 비공개 메서드를 정의할 수도 있습니다.
 })();
 ```
 
+[⇪ 목차로 이동](#목차)
+
 ### 컴포넌트 클래스 프리징(Freezing)
 
 만약 컴포넌트 클래스를 누군가에 의해 수정할 수 없도록 프리징하고자 한다면 `Object.freeze()`를 사용합니다.
@@ -603,6 +663,10 @@ window.customElements.define('y9-card', Frozen_Y9Card);
 
 > 개발 과정에서 컴포넌트 클래스를 프리징 할 경우 디버깅의 어려움이 있습니다. 배포할 때 프리징하길 권장합니다.
 
+[⇪ 목차로 이동](#목차)
+
+<br>
+
 ## 결론
 
 웹 컴포넌트 API는 현재 개발 중인 표준 기술 사양으로 실무에 바로 사용하기는 무리가 있습니다.
@@ -611,6 +675,10 @@ window.customElements.define('y9-card', Frozen_Y9Card);
 실무에 컴포넌트 기반 개발을 도입할 생각이라면?!
 
 웹 컴포넌트 표준 API가 개발 완성되고 브라우저 호환에 문제가 없을 때까지 프레임워크를 사용하시길 바랍니다.
+
+[⇪ 목차로 이동](#목차)
+
+<br>
 
 ## 최신 정보
 
@@ -665,9 +733,15 @@ window.customElements.define('y9-card', Frozen_Y9Card);
 })();
 ```
 
+[⇪ 목차로 이동](#목차)
+
+<br>
+
 ## 참고
 
 - [W3C, 웹 컴포넌트 기술 사양 표준화 진행상황](https://www.w3.org/standards/techs/components)
 - [HTML Web Component using Vanilla JavaScript](https://ayushgp.github.io/html-web-components-using-vanilla-js/)
 - [웹 컴포넌트, NAVER D2](http://d2.naver.com/helloworld/188655)
 - [웹 컴포넌트, MDN](https://developer.mozilla.org/ko/docs/Web/Web_Components)
+
+[⇪ 목차로 이동](#목차)

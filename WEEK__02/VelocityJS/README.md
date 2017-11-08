@@ -82,7 +82,7 @@
           - [UI 팩에 사전 등록된 모든 애니메이션 이펙트](#ui-팩에-사전-등록된-모든-애니메이션-이펙트)
           - [이펙트: 비헤이비어(Behavior)](#이펙트-비헤이비어behavior)
           - [이펙트: 등록(Registration)](#이펙트-등록registration)
-      - [플러그인: <abbr title="Velocity Motion Designer">VMD</abbr>](#플러그인-abbr-titlevelocity-motion-designervmdabbr)
+      - [플러그인: <abbr title="Velocity Motion Designer">VMD</abbr>](#플러그인-vmd)
         - [사용 설명서](#사용-설명서)
         - [사용 방법](#사용-방법)
       - [플러그인: 기타 플러그인 목록](#플러그인-기타-플러그인-목록)

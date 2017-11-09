@@ -66,11 +66,25 @@
     store.hobby = value;
   });
 
-})(window, window.jQuery, window.store);
+}) //(window, window.jQuery, window.store);
 
 
 // VueJS Framework
-;(function (global, Vue) {
+;(function (global, Vue, store) {
   'use strict';
 
-})(window, window.Vue);
+  // VueJS Options {}
+  var config = {
+    // Mount DOM Element (Selector)
+    el: '.demo',
+    // Vue 인스턴스가 관리할 데이터를 연결
+    // store는 객체이므로 참조형 데이터로 참조가 일어난다.
+    data: store
+  };
+
+  // Create Vue Instance {}
+  // using Vue Constructor f
+  // vm = ViewModel {}
+  global.vm = new Vue(config);
+
+})(window, window.Vue, window.store);

@@ -29,6 +29,7 @@
 
   var render = function(data) {
     store.hobby = data;
+    input.value = data;
     print.innerText = data;
   };
 
@@ -39,14 +40,33 @@
 
   init(); // 양방향 데이터 바인딩 데모 실행
 
-})(window, window.store);
+}) //(window, window.store);
 
 
 // jQuery Library
-;(function (global, $) {
+;(function (global, $, store) {
   'use strict';
 
-})(window, window.jQuery);
+  // 문서 객체를 jQuery 객체화해서 변수에 참조
+  var $input = $('.user-input'),
+      $print = $('.print-input'),
+      hobby  = store.hobby;
+
+  // 초기 인풋 영역에 데이터 바인딩
+  $input.val(hobby);
+  // 초기 프린트 영역에 데이터 바인딩
+  $print.text(hobby);
+
+  // $input에 keyup 이벤트 바인딩
+  $input.on('keyup', function(e){
+    var value = e.target.value;
+    // 프린트 영역 업데이트
+    $print.text(value);
+    // 데이터 업데이트
+    store.hobby = value;
+  });
+
+})(window, window.jQuery, window.store);
 
 
 // VueJS Framework

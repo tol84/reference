@@ -389,7 +389,7 @@ toggle() {
 
   // #2. ShadowRoot를 통해 요소(콘텐츠, 버튼)를 참조합니다.
   let content = shadowRoot.querySelector('.y9-card__content');
-  let button  = shadowRoot.querySelector('.y9-card__card__detail-button');
+  let button  = shadowRoot.querySelector('.y9-card__detail-button');
 
   // #3. 콘텐츠의 display 상태가 화면에 표시되는지 여부를 is_content_visible 변수에 복사합니다.
   let is_content_visible = content.style.display === 'none';

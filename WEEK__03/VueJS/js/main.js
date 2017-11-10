@@ -1,24 +1,24 @@
 /**
- * 2-Way Data Binding
- */
+   * 2-Way Data Binding
+   */
 
 // Vanilla Script
-(function (global, store){
+(function (global, store) {
   'use strict';
 
   // 함수가 접근 가능한 변수 리스트
   var document = global.document, demo, input, print;
 
-  var init = function() {
-    demo  = document.querySelector('.demo');
+  var init = function () {
+    demo = document.querySelector('.demo');
     input = demo.querySelector('.user-input');
     print = demo.querySelector('.print-input');
 
-    initRender( store.hobby ); // 데이터가 변경되면 화면을 업데이트 하는 역할
+    initRender(store.hobby); // 데이터가 변경되면 화면을 업데이트 하는 역할
     bind();
   };
 
-  var bind = function() {
+  var bind = function () {
     input.addEventListener('keyup', update);
   };
 
@@ -27,13 +27,13 @@
     print.innerText = data;
   };
 
-  var render = function(data) {
+  var render = function (data) {
     store.hobby = data;
     input.value = data;
     print.innerText = data;
   };
 
-  var update = function(e) {
+  var update = function (e) {
     var value = e.target.value;
     render(value);
   };
@@ -44,13 +44,13 @@
 
 
 // jQuery Library
-;(function (global, $, store) {
+; (function (global, $, store) {
   'use strict';
 
   // 문서 객체를 jQuery 객체화해서 변수에 참조
   var $input = $('.user-input'),
-      $print = $('.print-input'),
-      hobby  = store.hobby;
+    $print = $('.print-input'),
+    hobby = store.hobby;
 
   // 초기 인풋 영역에 데이터 바인딩
   $input.val(hobby);
@@ -58,7 +58,7 @@
   $print.text(hobby);
 
   // $input에 keyup 이벤트 바인딩
-  $input.on('keyup', function(e){
+  $input.on('keyup', function (e) {
     var value = e.target.value;
     // 프린트 영역 업데이트
     $print.text(value);
@@ -85,6 +85,16 @@
   // Create Vue Instance {}
   // using Vue Constructor f
   // vm = ViewModel {}
-  global.vm = new Vue(config);
+  new Vue(config);
+
+  // new Vue({
+  //   el: '.container',
+  //   // data: {
+  //   //   // 값 복사
+  //   //   hello: store.hello
+  //   // }
+  //   // 값 참조
+  //   data: store
+  // });
 
 })(window, window.Vue, window.store);

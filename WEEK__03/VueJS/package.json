@@ -1,0 +1,11 @@
+{
+  "name": "vue.js-study",
+  "version": "0.0.1",
+  "description": "VueJS 학습",
+  "scripts": {
+    "serve": "live-server"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  }
+}
